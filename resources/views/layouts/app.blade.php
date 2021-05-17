@@ -9,6 +9,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+
+    @yield('styles')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -74,10 +76,21 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <div class="row">
 
-        <main class="py-4">
+                 <div class="py-4 mt-5 col-12">
+        @yield('botones')
+    </div>
+                
+                 <main class="py-4 mt-5 col-12">
             @yield('content')
         </main>
+            </div>
+        </div>
+
+       
     </div>
+    @yield('scripts')
 </body>
 </html>
