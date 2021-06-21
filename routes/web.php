@@ -21,7 +21,10 @@ Route::get('/', function () {
 Route::get('/recetas', [RecetaController::class, "index"])->name('recetas.index');
 
 Route::get('/recetas/create', [RecetaController::class, "create"])->name('recetas.create');
+
 Route::post('/recetas', [RecetaController::class, "store"])->name('recetas.store');
+
+Route::get('/recetas/{receta}', [RecetaController::class, "show"])->name('recetas.show');
 
 
 Auth::routes();
