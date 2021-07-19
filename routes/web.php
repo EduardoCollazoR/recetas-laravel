@@ -29,6 +29,7 @@ Route::get('/recetas/{receta}/edit', [RecetaController::class, "edit"])->name('r
 
 Route::put('/recetas/{receta}', [RecetaController::class, "update"])->name('recetas.update');
 
+Route::delete('/recetas/{receta}', [RecetaController::class, "destroy"])->name('recetas.destroy');
 Auth::routes();
 
 /* Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); */

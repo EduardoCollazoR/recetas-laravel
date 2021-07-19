@@ -67,7 +67,8 @@ class RecetaPolicy
      */
     public function delete(User $user, Receta $receta)
     {
-        //
+        //Revisa si el usuario es el mismo que creo la receta 
+        return $user->id === $receta->user_id;
     }
 
     /**
