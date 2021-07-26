@@ -10018,3 +10018,7 @@ trix-editor {
 .bg-primary .navbar-brand:hover {
   color: white;
 }
+
+.icono {
+  width: 36px;
+}
