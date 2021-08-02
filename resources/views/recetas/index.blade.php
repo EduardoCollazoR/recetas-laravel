@@ -23,9 +23,7 @@
                 <td>{{$receta->categoria->nombre }}</td>
                 <td>
 
-                    <eliminar-receta>
-                        receta-id={{$receta->id}}
-                    </eliminar-receta>
+                    <eliminar-receta>receta-id={{$receta->id}}</eliminar-receta>
 
 
                     <a href="{{route('recetas.edit',['receta'=>$receta->id])}}" class="btn btn-dark  d-block mb-2">Editar</a>
@@ -36,8 +34,8 @@
 
         </tbody>
     </table>
+    <div class="col-12 mt-4 justify-content-center d-flex">
+        {{$recetas->links()}}
+    </div>
 </div>
-
-
-
 @endsection

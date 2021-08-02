@@ -1869,7 +1869,7 @@ __webpack_require__.r(__webpack_exports__);
         var params = {
           id: _this.recetaId
         };
-        axios.post("recetas/".concat(_this.recetaId), {
+        axios.post("/recetas/".concat(_this.recetaId), {
           params: params,
           _method: 'delete'
         }).then(function (respuesta) {
@@ -1881,7 +1881,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
           _this.$el.parentNode.parentNode.parentNode.removeChild(_this.$el.parentNode.parentNode);
-        })["catch"](function (err) {});
+        })["catch"](function (err) {
+          console.log(err);
+        });
       });
     }
   }
@@ -1907,7 +1909,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['fecha'],
   mounted: function mounted() {},
   computed: {
-    fomatearFecha: function fomatearFecha() {
+    formatearFecha: function formatearFecha() {
       return moment(this.fecha).locale('es').format('DD [de] MMMM [del] YYYY');
     }
   }
@@ -1951,7 +1953,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 
 Vue.use((vue_sweetalert2__WEBPACK_IMPORTED_MODULE_0___default()));
 Vue.config.ignoredElements = ['trix-editor', 'trix-toolbar'];
-Vue.component('fecha=receta', __webpack_require__(/*! ./components/FechaReceta.vue */ "./resources/js/components/FechaReceta.vue").default);
+Vue.component('fecha-receta', __webpack_require__(/*! ./components/FechaReceta.vue */ "./resources/js/components/FechaReceta.vue").default);
 Vue.component('eliminar-receta', __webpack_require__(/*! ./components/EliminarReceta.vue */ "./resources/js/components/EliminarReceta.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -59118,9 +59120,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("span", {
-    domProps: { textContent: _vm._s(_vm.formatear - _vm.fecha) }
-  })
+  return _c("span", { domProps: { textContent: _vm._s(_vm.formatearFecha) } })
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -26,11 +26,15 @@ Route::get('/recetas/create', [RecetaController::class, "create"])->name('receta
 Route::post('/recetas', [RecetaController::class, "store"])->name('recetas.store');
 
 Route::get('/recetas/{receta}', [RecetaController::class, "show"])->name('recetas.show');
+
 Route::get('/recetas/{receta}/edit', [RecetaController::class, "edit"])->name('recetas.edit');
 
 Route::put('/recetas/{receta}', [RecetaController::class, "update"])->name('recetas.update');
 
 Route::delete('/recetas/{receta}', [RecetaController::class, "destroy"])->name('recetas.destroy');
+
+
+/* Route::resource('recetas', RecetaController::class); */
 
 
 Route::get('/perfiles/{perfil}', [PerfilController::class, "show"])->name('perfiles.show');

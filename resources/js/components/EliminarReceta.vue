@@ -1,5 +1,5 @@
 <template>
-<input type="submit" value="Eliminar" class="btn btn-danger  d-block w-100 mb-2" v-on:click="eliminarReceta">
+<input type="submit" value="Eliminar" class="btn btn-danger  d-block w-100 mb-2" @click="eliminarReceta">
 </template>
 
 <script>
@@ -21,7 +21,7 @@ this.$swal({
     const params ={
         id: this.recetaId
     }
-    axios.post(`recetas/${this.recetaId}`,{params,_method:'delete'})
+    axios.post(`/recetas/${this.recetaId}`,{params,_method:'delete'})
     .then((respuesta) => {
 this.$swal({
       title:'Receta Eliminada',
@@ -32,11 +32,12 @@ this.$swal({
     this.$el.parentNode.parentNode.parentNode.removeChild(this.$el.parentNode.parentNode);
     })
     .catch((err) => {
+        console.log(err);
 
     })
 
   
-})
+}) 
         }
     }
 }

@@ -24,7 +24,7 @@ window.Vue = require('vue').default;
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.use(VueSweetAlert2);
 Vue.config.ignoredElements = ['trix-editor', 'trix-toolbar'];
-Vue.component('fecha=receta', require('./components/FechaReceta.vue').default);
+Vue.component('fecha-receta', require('./components/FechaReceta.vue').default);
 
 Vue.component('eliminar-receta', require('./components/EliminarReceta.vue').default);
 

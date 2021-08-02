@@ -1,5 +1,5 @@
 <template>
-    <span v-text="formatear-fecha"></span>
+    <span v-text="formatearFecha"></span>
 </template>
 <script>
 
@@ -9,7 +9,7 @@ export default {
 
     },
     computed:{
-        fomatearFecha(){
+        formatearFecha(){
 return moment(this.fecha).locale('es').format('DD [de] MMMM [del] YYYY')
         }
     }
