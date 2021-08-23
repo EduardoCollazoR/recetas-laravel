@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RecetaController;
 use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\LikesController;
+use App\Http\Controllers\InicioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +17,7 @@ use App\Http\Controllers\PerfilController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [InicioController::class, "index"])->name('inicio.index');
 
 Route::get('/recetas', [RecetaController::class, "index"])->name('recetas.index');
 
@@ -43,6 +43,10 @@ Route::get('/perfiles/{perfil}', [PerfilController::class, "show"])->name('perfi
 Route::get('/perfiles/{perfil}/edit', [PerfilController::class, "edit"])->name('perfiles.edit');
 
 Route::put('/perfiles/{perfil}', [PerfilController::class, "update"])->name('perfiles.update');
+
+
+//almacena los likes de las recetas 
+Route::post('/recetas/{receta}', [LikesController::class, "store"])->name('likes.store');
 
 Auth::routes();
 
