@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\CategoriasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RecetaController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\LikesController;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\CateogoriasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,8 +35,14 @@ Route::put('/recetas/{receta}', [RecetaController::class, "update"])->name('rece
 
 Route::delete('/recetas/{receta}', [RecetaController::class, "destroy"])->name('recetas.destroy');
 
+Route::get('/categoria/{categoriaReceta}', [CategoriasController::class, "show"])->name('categorias.show');
+
 
 /* Route::resource('recetas', RecetaController::class); */
+
+//buscador de recetas 
+
+Route::get('/buscar', [RecetaController::class, "search"])->name('buscar.show');
 
 
 Route::get('/perfiles/{perfil}', [PerfilController::class, "show"])->name('perfiles.show');
